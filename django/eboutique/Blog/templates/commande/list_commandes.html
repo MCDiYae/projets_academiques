@@ -1,0 +1,31 @@
+{% extends 'main.html'%}
+{%block contenu %}
+<div>
+		<h5>Liste des commandes</h5>
+		<hr>
+		<div class="card card-body">
+			<a class="btn btn-primary  btn-sm btn-block" href="{% url 'ajouter_commande' %}">Ajouter une Commande</a>
+			<table class="table table-sm">
+				<tr>
+					<th>Produit</th>
+					<th>Client</th>
+					<th>Date de la commande</th>
+					<th>Quantite</th>
+					<th>Action</th>
+				</tr>
+				{% for commande in commandes %}
+					<tr>
+						<td>{{commande.livre.titre}}</td>
+						<td>{{commande.client.nom}} {{commande.client.prenom}}</td>
+						<td>{{commande.dateCreation}}</td>
+						<td>{{commande.qte}}</td>
+						<td>
+							<a class="btn btn-success btn-sm btn-block" href="{% url 'modifier_commande' commande.id %}">Modifier</a>
+							<a class="btn btn-danger btn-sm btn-block" href="{% url 'supprimer_commande' commande.id %}">Supprimer</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+{%endblock%}

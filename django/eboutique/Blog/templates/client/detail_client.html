@@ -1,0 +1,25 @@
+{% extends 'main.html'%}
+{%block contenu %}
+
+<h1 style="width:100%;text-align:center;">Détails du client : <strong>{{ client.nom }} {{ client.prenom }}</strong></h1>
+    <div class="row p-5">
+        <div class="col-9 p-5 mt-5">
+            <p><strong>Nom :</strong> {{ client.nom }}</p>
+            <p><strong>Prenom :</strong> {{ client.prenom }}</p>
+            <p><strong>Email :</strong> {{ client.email }}</p>
+            <p><strong>Telephone :</strong> {{ client.telephone }}</p>
+            <p><strong>rejoint le :</strong> {{ client.dateCreation }}</p>
+
+            <div class="mt-4">
+                <a href="{% url 'modifier_client' client.id %}" class="btn btn-primary">Modifier</a>
+                <a href="{% url 'supprimer_client' client.id %}" class="btn btn-danger ml-3">Supprimer</a>
+            </div>
+        </div>
+        <div class="col-auto">
+            {% if livre.image_covr %}
+            <img src="{{ livre.image_covr.url }}" alt="Image de couverture du livre" Style="max-width:400px;">
+            {% endif %}
+        </div>
+    </div>
+{%endblock%}
+

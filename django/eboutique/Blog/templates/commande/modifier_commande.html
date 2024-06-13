@@ -1,0 +1,10 @@
+{% extends 'main.html'%}
+{%block contenu %}
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <!-- Vos champs de formulaire ici -->
+    <button type="submit" class="btn btn-success">Modifier</button>
+</form>
+{%endblock%}

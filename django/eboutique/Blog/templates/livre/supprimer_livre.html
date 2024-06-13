@@ -1,0 +1,11 @@
+{% extends 'main.html'%}
+{%block contenu %}
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h3>Êtes-vous sûr de vouloir supprimer "{{ livre.titre }}" ?</h3><br />
+    <!-- Vos champs de formulaire ici -->
+    <button type="submit" class="btn btn-success">Supprimer</button>
+    <a href="{% url 'home' %}"  class="btn btn-secondary">Annuler</a>
+</form>
+{%endblock%}

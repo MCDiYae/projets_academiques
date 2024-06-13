@@ -1,0 +1,29 @@
+{% extends 'main.html'%}
+
+
+{% block contenu%}
+<form method="GET">
+    {{livrefilter.form.as_p}}
+    <button type="submit">Rechercer</button>
+</form>
+<div class="container mt-5">
+        <h1 class="text-center mb-5">Liste des Livres</h1>
+        <div class="row">
+            {% for livre in livrefilter.qs %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{{ livre.image_covr.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ livre.titre }}</h5>
+                        <p class="card-text">{{ livre.description }}</p>
+                        <a href="{% url 'detail_livre' livre.id %}" class="btn btn-details btn-block">Détails</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="text-center">
+            <a type="button" class="btn btn-ajouter" href="{% url 'ajouter_livre' %}">Ajouter un Livre</a>
+        </div>
+    </div>
+{%endblock%}

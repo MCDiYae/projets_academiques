@@ -1,0 +1,29 @@
+{%extends 'main.html'%}
+{% block contenu%}
+ <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>{{ livre.titre }}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="{{ livre.image_covr.url }}" alt="Image de couverture du livre" class="img-fluid">
+        </div>
+        <div class="col-md-8">
+            <p><strong>Auteur :</strong> {{ livre.auteur }}</p>
+            <p><strong>Prix :</strong> {{ livre.prix }}</p>
+            <p><strong>Description :</strong> {{ livre.discription }}</p>
+            <p><strong>Quantité disponible :</strong> {{ livre.quantite }}</p>
+            <p><strong>Nombre de pages :</strong> {{ livre.pages }}</p>
+            <p><strong>Catégorie :</strong> {{ livre.category }}</p>
+            <p><strong>Date d'édition :</strong> {{ livre.date_edition }}</p>
+            <div class="mt-4">
+                <a href="{%url 'modifier_livre' livre.id%}" class="btn btn-primary">Modifier</a>
+                <a href="{%url 'supprimer_livre' livre.id%}" class="btn btn-danger ml-3">Supprimer</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}

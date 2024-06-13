@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Candidature</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+           
+        }
+    
+        h3 {
+            text-align: center;
+            color: #333;
+        }
+    
+        form {
+            max-width: 500px;
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+    
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+    
+        select {
+            height: 40px;
+        }
+    
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+    
+</head>
+<body>
+    
+    <div id="inscription">
+        <h3>Formulaire de candidature a la formation IWA (Pre-inscription)</h3>
+        <div id="formula">
+            <p>Vous etes invite a fournier les information ci-dessous:</p><br>
+            <form method="post" action="traitement.php">
+                <label for="nom">Nom</label><br><input type="text" id="nom" name="nom"><br>
+                <label for="prenom">Prenom</label><br><input type="text" id="prenom" name="prenom"><br>
+                <label for="tele">Telephone</label><br><input type="tel" id="tele" name="tele"><br>
+                <label for="dop">Dernier diplome obtenu</label><br><select id="dop" name="dop">
+                    <option>--Veuillez choisir une option--</option>
+                    <option value="license">License(d'un etablissement publique)</option>
+                    <option value="master">Master(d'un etablissement publique)</option>
+                    <option value="ingenieur">Ingenieur(d'un etablissement publique)</option>
+                    <option value="bac_3">Bac+3(d'un etablissement prive)</option>
+                    <option value="bac_4">Bac+4(d'un etablissement prive)</option>
+                    <option value="bac_5">Bac+5(d'un etablissement prive)</option>
+                </select><br>
+                <label for="EVP">Etablissement, ville et pays</label><br><input type="text" id="EVP" name="EVP"><br>
+                <label for="filiere">Filiere</label><br><input type="text" id="filiere" name="filiere"><br>
+                <label for="A_obt">Annee d'obtenation</label><br><input type="number" id="A_obt" name="A_obt"><br>
+                <label for="e_mail">E-mail</label><br><input type="email" id="e_mail" name="e_mail"><br>
+                <label for="cv">CV (pdf file &lt; 5 MB)</label><br><input type="file" id="cv" name="cv"><br>
+                <label for="last_releves">Relevés des notes de la dernière année d'études (Relevé 1 &lt; 5 MB)</label><br><input type="file" id="last_releves" name="last_releves"><br>
+                <label for="pre_releve">Relevés des notes de l'avant dernière année d'études (Relevé 2 &lt; 5 MB)</label><br><input type="file" id="pre_releve" name="pre_releve"><br>
+                <input type="submit" value="Envoyer" id="submit">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+{% extends 'main.html'%}
+{%block contenu %}
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h3>Êtes-vous sûr de vouloir supprimer la commande: "{{ commande.livre.titre }} du client {{ commande.client.nom }}
+        {{ commande.client.prenom }} de quantite {{ commande.qte }}" ?</h3><br />
+    <!-- Vos champs de formulaire ici -->
+    <button type="submit" class="btn btn-success">Supprimer</button>
+    <a href="{% url 'list_clients' %}"  class="btn btn-secondary">Annuler</a>
+</form>
+{%endblock%}
